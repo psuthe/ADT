@@ -1,5 +1,6 @@
 package com.prs;
 
+import com.prs.impl.StackArray;
 import com.prs.impl.StackLL;
 
 public class TestApparatus {
@@ -7,14 +8,18 @@ public class TestApparatus {
     public static void main(String[] args) {
 
         TestApparatus apparatus = new TestApparatus();
-        apparatus.testStackLinkedList();
+
+        // test LinkedList Stack
+        apparatus.testStack(new StackLL());
+
+        // test Array Stack
+        apparatus.testStack(new StackArray(10));
 
     }
 
-    protected void testStackLinkedList(){
+    protected void testStack(IStack<String> stack ){
 
         try {
-            IStack<String> stack = new StackLL();
             assertTest(stack.isEmpty(), true);
             assertTestNull(stack.pop());
             assertTest(stack.size(), 0);
