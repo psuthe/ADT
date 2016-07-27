@@ -7,6 +7,7 @@ import java.util.Map;
 
 /**
  * Created by peter on 7/26/16.
+ * LinkedList Stack implementation
  */
 public class StackLL<Item> implements IStack<Item> {
     private Node lastNode;
